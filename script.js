@@ -1,4 +1,3 @@
-// Array of quirky public health-oriented summer project ideas
 const summerProjects = [
     { title: "Screentime Shock Therapy", description: "An app that jump-scares you whenever you exceed 3 hours of doom-scrolling." },
     { title: "Therapy Bingo", description: "A game where you mark off mental health red flags you catch yourself saying and win free counseling sessions." },
@@ -21,8 +20,8 @@ const summerProjects = [
     { title: "Spicy Water", description: "A campaign to make hydration exciting by adding cayenne pepper to bottled water." },
     { title: "Smoothie Roulette", description: "A vending machine that randomly generates smoothie ingredients based on your daily vitamin deficiencies." },
     { title: "AI Meal Shamer", description: "An app that sarcastically roasts you whenever you eat something ultra-processed." },
-    { title: "Dehydration Detector", description: "A smart bracelet that changes color when you’re overdue for a drink of water." },
-    { title: "Eat the Rainbow", description: "A daily challenge where you must eat at least five different-colored foods, encouraging balanced nutrition." },
+    { title: "Dehydration Detector", description: "A smart bracelet that changes colour when you’re overdue for a drink of water." },
+    { title: "Eat the Rainbow", description: "A daily challenge where you must eat at least five different-coloured foods, encouraging balanced nutrition." },
     { title: "Gum That Guilt-Trips You", description: "A chewing gum that reminds you to floss every time you chew." },
     { title: "Shade Maps", description: "An interactive city map showing the best shaded walking routes to avoid heat exhaustion." },
     { title: "Sweat-o-Meter", description: "A wearable that estimates how much sweat you’ve lost and warns you to rehydrate." },
@@ -36,14 +35,23 @@ const summerProjects = [
     { title: "Public Health Escape Room", description: "A puzzle-based escape room that teaches public health principles while players try to 'contain an outbreak'." }
 ];
 
-// Function to display a random summer project idea
+const investmentAmounts = [
+    "One peso", "One Indian Rupee", "Yes mama", "Similar to net worth of Elon Musk", "Thousands of healthy goats", "Time is money", "500k", "Tesco Meal Deal worth", "Your mum", "Your tube fare equivalent", "69 bucks", "Who's asking?", "Who are you? SEC?", "Who are you underpaid WHO worker?", "Is that you Alexanderrrrr?", "CID is the best course in LSHTM", "IDR what I wrote last time", "Do you even want to do summer project?", "I'll go bankrupt", "Don't ask, Don't Tell", "You cannot serve God and money - Matthew 6:24", "Negotiable", "A fat bag", "To the moon", "Numbers go up", "$1T", "I don't think you could do this", "Depends", "Not important", "Fuck if I know", "One Dogecoin", "Your hopes and dreams", "Whatever's left after rent", "Two shillings and a button", "Enough to make Jeff Bezos blink", "The energy of the universe", "A mysterious benefactor's cheque", "A crisp tenner" 
+];
+
 function getRandomProject() {
     const randomIndex = Math.floor(Math.random() * summerProjects.length);
     const project = summerProjects[randomIndex];
-
     document.getElementById("idea-title").textContent = project.title;
     document.getElementById("idea-description").textContent = project.description;
 }
 
-// Event listener for button click
-document.getElementById("generate-btn").addEventListener("click", getRandomProject);
+function getRandomInvestment() {
+    const randomIndex = Math.floor(Math.random() * investmentAmounts.length);
+    document.getElementById("investment-amount").textContent = investmentAmounts[randomIndex];
+}
+
+document.getElementById("generate-btn").addEventListener("click", () => {
+    getRandomProject();
+    getRandomInvestment();
+});
